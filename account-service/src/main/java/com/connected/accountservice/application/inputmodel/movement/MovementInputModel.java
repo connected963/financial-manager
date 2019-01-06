@@ -11,7 +11,6 @@ import java.util.UUID;
 
 public class MovementInputModel {
 
-    @NotNull(message = "{movementUpdateInputModel.id.null}")
     private UUID id;
 
     @NotNull(message = "{movementUpdateInputModel.type.null}")

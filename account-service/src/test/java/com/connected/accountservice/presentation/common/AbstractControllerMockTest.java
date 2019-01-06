@@ -74,6 +74,10 @@ public abstract class AbstractControllerMockTest {
         return mockMvc.perform(putBuilder);
     }
 
+    protected ResultActions performDelete(final String url) throws Exception {
+        return performDelete(url, Map.of());
+    }
+
     protected <T> ResultActions performDelete(final String url, final T body) throws Exception {
         final var deleteBuilder = MockMvcRequestBuilders.delete(url);
         deleteBuilder.content(objectMapper.writeValueAsString(body));

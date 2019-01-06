@@ -10,7 +10,6 @@ import java.util.UUID;
 
 public class StorageInputModel {
 
-    @NotNull(message = "{storageInputModel.id.null}")
     private UUID id;
 
     @NotBlank(message = "{storageInputModel.name.blank}")

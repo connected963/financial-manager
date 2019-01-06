@@ -18,7 +18,7 @@ public class MonetaryGoalController {
     private final MonetaryGoalService monetaryGoalService;
 
     @Autowired
-    public MonetaryGoalController(MonetaryGoalService monetaryGoalService) {
+    public MonetaryGoalController(final MonetaryGoalService monetaryGoalService) {
         this.monetaryGoalService = monetaryGoalService;
     }
 
@@ -31,7 +31,7 @@ public class MonetaryGoalController {
     }
 
     @GetMapping("/{monetaryGoalId}")
-    public SimpleMonetaryGoalQueryModel buscarPorId(@PathVariable final UUID monetaryGoalId) {
+    public SimpleMonetaryGoalQueryModel findById(@PathVariable final UUID monetaryGoalId) {
         return monetaryGoalService.findById(monetaryGoalId);
     }
 

@@ -36,4 +36,20 @@ public final class StorageValueInputModelTestFactory {
                 .withStorageId(StorageDefaultData.id)
                 .build();
     }
+
+    public static StorageValueInputModel createAnDefaultToUpdateWithoutValue() {
+        return new StorageValueInputModelTestBuilder()
+                .withId(StorageValueDefaultData.id)
+                .withDate(StorageValueDefaultData.date)
+                .withStorageId(StorageDefaultData.id)
+                .build();
+    }
+
+    public static StorageValueInputModel createAnDefaultToUpdateWithoutStorage() {
+        return new StorageValueInputModelTestBuilder()
+                .withId(StorageValueDefaultData.id)
+                .withValue(StorageValueDefaultData.value)
+                .withDate(StorageValueDefaultData.date)
+                .build();
+    }
 }

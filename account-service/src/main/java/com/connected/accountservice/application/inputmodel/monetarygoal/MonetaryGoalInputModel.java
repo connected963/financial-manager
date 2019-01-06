@@ -9,7 +9,6 @@ import java.util.UUID;
 
 public class MonetaryGoalInputModel {
 
-    @NotNull(message = "{monetaryGoalInputModel.id.null}")
     private UUID id;
 
     @NotNull(message = "{monetaryGoalInputModel.value.null}")

@@ -75,4 +75,33 @@ public class StorageValueControllerTest extends AbstractControllerMockTest {
                 .andExpect(MockMvcResultMatchers.status().isOk());
     }
 
+    @Test
+    public void givenStorageValueInputModelWithoutValue_mustFailToUpdate() throws Exception {
+        final var storageValueToUpdate =
+                StorageValueInputModelTestFactory.createAnDefaultToUpdateWithoutValue();
+        performPut("/storage/value", storageValueToUpdate)
+                .andExpect(MockMvcResultMatchers.status().is4xxClientError());
+    }
+
+    @Test
+    public void givenStorageValueInputModelWithoutStorage_mustFailToUpdate() throws Exception {
+        final var storageValueToUpdate =
+                StorageValueInputModelTestFactory.createAnDefaultToUpdateWithoutStorage();
+        performPost("/storage/value", storageValueToUpdate)
+                .andExpect(MockMvcResultMatchers.status().is4xxClientError());
+    }
+
+    @Test
+    public void givenCompleteStorageValueInputModel_mustUpdateWithSuccess() throws Exception {
+        final var storageValueToUpdate =
+                StorageValueInputModelTestFactory.createAnDefaultToUpdate();
+        performPut("/storage/value", storageValueToUpdate)
+                .andExpect(MockMvcResultMatchers.status().isOk());
+    }
+
+    @Test
+    public void givenStorageValueId_mustDeleteStorageValueWithSuccess() throws Exception {
+        final var url = String.format("/storage/value/%s", StorageValueDefaultData.id);
+        performDelete(url).andExpect(MockMvcResultMatchers.status().isOk());
+    }
 }

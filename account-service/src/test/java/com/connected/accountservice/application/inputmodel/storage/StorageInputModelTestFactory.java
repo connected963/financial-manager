@@ -15,10 +15,36 @@ public final class StorageInputModelTestFactory {
                 .build();
     }
 
+    public static StorageInputModel createAnDefaultToInsertWithoutName() {
+        return new StorageInputModelTestBuilder()
+                .withDocumentLinkedHash(StorageDefaultData.documentLinkedHash)
+                .build();
+    }
+
+    public static StorageInputModel createAnDefaultToInsertWithoutDocumentLinkedHash() {
+        return new StorageInputModelTestBuilder()
+                .withDocumentLinkedHash(StorageDefaultData.documentLinkedHash)
+                .build();
+    }
+
     public static StorageInputModel createAnDefaultToUpdate() {
         return new StorageInputModelTestBuilder()
                 .withId(StorageDefaultData.id)
                 .withName(StorageDefaultData.name)
+                .withDocumentLinkedHash(StorageDefaultData.documentLinkedHash)
+                .build();
+    }
+
+    public static StorageInputModel createAnDefaultToUpdateWithoutName() {
+        return new StorageInputModelTestBuilder()
+                .withId(StorageDefaultData.id)
+                .withDocumentLinkedHash(StorageDefaultData.documentLinkedHash)
+                .build();
+    }
+
+    public static StorageInputModel createAnDefaultToUpdateWithoutDocumentLinkedHash() {
+        return new StorageInputModelTestBuilder()
+                .withId(StorageDefaultData.id)
                 .withDocumentLinkedHash(StorageDefaultData.documentLinkedHash)
                 .build();
     }
