@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: gateway
-        image: vagrant:5000/sample-microservices-kubernetes-gateway:snapshot-181123-151445-0264
+        image: vagrant:5000/financial-manager-gateway-service:latest
         imagePullPolicy: "Always"
         resources:
           limits:

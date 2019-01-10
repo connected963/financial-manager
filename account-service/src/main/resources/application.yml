@@ -3,11 +3,12 @@ spring:
     name: account-service
   profiles:
     active: dev
-
 logging:
   pattern: 
     console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
-
+server:
+  servlet:
+    context-path: "/account"
 ---
 
 spring:
@@ -19,7 +20,8 @@ spring:
         password: "admin"
         masterUrl: https://172.28.128.3:6443
         trustCerts: true
-
+server:
+  port: 8081
 ---
 
 spring:

@@ -100,14 +100,14 @@
                         <image>
                             <registry>172.28.128.3:5000</registry>
                             <alias>${project.artifactId}</alias>
-                            <name>sample-microservices-kubernetes-gateway:%t</name>
+                            <name>financial-manager-%a:%l</name>
                             <build>
                                 <assembly>
                                     <name>application</name>
                                     <descriptorRef>artifact</descriptorRef>
                                 </assembly>
                                 <from>openjdk:latest</from>
-                                <entryPoint>java -jar -Dspring.profiles.active=prd application/${project.build.finalName}.jar</entryPoint>
+                                <entryPoint>java -jar application/${project.build.finalName}.jar</entryPoint>
                             </build>
                             <run>
                                 <ports>

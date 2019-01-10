@@ -5,9 +5,17 @@ spring:
     active: dev
 
 logging:
-  pattern: 
+  pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
 
+zuul:
+  ignored-services: "*-db"
+  routes:
+    account:
+      path: "/account/**"
+      serviceId: "account-service"
+      strip-prefix: false
+  prefix: "/financial-manager"
 ---
 
 spring:
@@ -23,7 +31,7 @@ spring:
 ---
 
 spring:
-  profiles: prd
+  profiles: kubernetes
   cloud:
     kubernetes:
       client:
