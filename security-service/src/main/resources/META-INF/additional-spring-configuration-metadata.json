@@ -1,0 +1,19 @@
+{
+  "properties": [
+    {
+      "name": "token-store.name",
+      "type": "java.lang.String",
+      "description": "Keystore file name."
+    },
+    {
+      "name": "token-store.password",
+      "type": "java.lang.String",
+      "description": "Keystore password."
+    },
+    {
+      "name": "token-store.alias",
+      "type": "java.lang.String",
+      "description": "Keystore alias."
+    }
+  ]
+}

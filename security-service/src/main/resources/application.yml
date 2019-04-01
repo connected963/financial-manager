@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: security-service
+  profiles:
+    active: dev
+logging:
+  pattern: 
+    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+server:
+  servlet:
+    context-path: "/security"
+---
+
+spring:
+  profiles: dev
+  cloud:
+    kubernetes:
+      client:
+        username: "system:admin"
+        password: "admin"
+        masterUrl: https://172.28.128.3:6443
+        trustCerts: true
+  jpa:
+    show-sql: true
+server:
+  port: 8082
+token-store:
+  name: "financial-manager-store.jks"
+  password: "storepass"
+  alias: "financial-manager"
+
+---
+
+spring:
+  profiles: prd
+  cloud:
+    kubernetes:
+      client:
+        trust-certs: true
